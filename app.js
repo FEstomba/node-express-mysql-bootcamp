@@ -34,6 +34,11 @@ app.get ('/', (req, res) =>{
 //le digo a express que es un servicio de tipo GET a la ruta "/customers" 
 //cuando este servicio recibe un request retorna una cadena "List of customers"
 app.get('/customers', (req,res) =>{
+     
+
+
+
+
     res.send('List of customers')
 });
 //cuando este servicio recibe un request retorna una cadena "Get customer by ID"
