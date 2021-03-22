@@ -34,19 +34,32 @@ app.get ('/', (req, res) =>{
 //le digo a express que es un servicio de tipo GET a la ruta "/customers" 
 //cuando este servicio recibe un request retorna una cadena "List of customers"
 app.get('/customers', (req,res) =>{
-    res.send('List of customers');
-})
-
-
-
-
-
-
+    res.send('List of customers')
+});
+//cuando este servicio recibe un request retorna una cadena "Get customer by ID"
+app.get('/customers/:id', (req,res) =>{
+    res.send('Get customer by ID')
+});
+//le digo a express que es un servicio de tipo POST a la ruta "/add" 
+//cuando este servicio recibe un request retorna una cadena "New customer"
+app.post('/add', (req,res) =>{
+    res.send('New customer')
+});
+//le digo a express que es un servicio de tipo PUT a la ruta "/update/:id" 
+//cuando este servicio recibe un request retorna una cadena "Update customer"
+app.put('/update/:id', (req,res) =>{
+    res.send('Update customer')
+});
+//le digo a express que es un servicio de tipo DELETE a la ruta "/delete/:id" 
+//cuando este servicio recibe un request retorna una cadena "Delete customer"
+app.delete('/delete/:id', (req,res) =>{
+    res.send('Delete customer')
+});
 
 //Crea una conexion con la base de datos 
 connection.connect(error =>{
     if (error) throw error;
-    console.log('database server running!');
-})
+    console.log('database server running!')
+});
 //Inicio el servidor en el puerto configurado
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
